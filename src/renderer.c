@@ -20,7 +20,7 @@ void screen_buffer_render(const ScreenBuffer_t *screen) {
     assert(screen);
     puts("\n>> Screen:\n");
     size_t size = (screen->width + 1) * screen->height * sizeof(char);
-    char *text = malloc(size);
+    char text[size];
     size_t text_offset = 0;
     size_t buffer_offset = 0;
     for (size_t y = 0; y < screen->height; y++)

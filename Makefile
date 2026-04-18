@@ -5,7 +5,7 @@ HEADERS_DIR=headers
 CC=clang
 
 CPPFLAGS=-Iinclude -Iheaders
-CFLAGS= #-g
+CFLAGS= -g
 LDLFLAGS=
 LDLIBS=-lm
 

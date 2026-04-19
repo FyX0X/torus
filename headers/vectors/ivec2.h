@@ -8,6 +8,10 @@ typedef struct {
     int y;
 } ivec2;
 
+static inline ivec2 ivec2_create(int x, int y) {
+    return (ivec2) { x, y };
+}
+
 static inline ivec2 ivec2_add(ivec2 u, ivec2 v) {
     return (ivec2) {
         .x = u.x + v.x,

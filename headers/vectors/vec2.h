@@ -8,7 +8,7 @@ typedef struct {
     float y;
 } vec2;
 
-static inline vec2 vec3_create(float x, float y) {
+static inline vec2 vec2_create(float x, float y) {
     return (vec2) {x, y};
 }
 

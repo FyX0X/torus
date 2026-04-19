@@ -17,6 +17,6 @@ typedef struct {
 
 Camera_t camera_create_default(uint32_t width, uint32_t height);
 
-Ray_t camera_get_ray_from_pixel_coord(Camera_t camera, uint32_t x, uint32_t y);
+Ray_t camera_get_ray_from_pixel_coord(Camera_t camera, ivec2 pixel_coord);
 
 #endif // CAMERA_H

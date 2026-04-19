@@ -1,5 +1,7 @@
 #include <stdio.h>
 #include "renderer.h"
+#include "camera.h"
+#include "scene.h"
 #include <time.h>
 #include <stdbool.h>
 
@@ -19,6 +21,11 @@ int main() {
 
     int x = 0;
     int y = 0;
+
+    Camera_t camera = camera_create_default(WIDTH, HEIGHT);
+    camera.position.z = 3;
+    
+    Scene_t scene = scene_create();
 
     while (true) {
         screen_buffer_render(screen);

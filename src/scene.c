@@ -30,8 +30,7 @@ int scene_add_object(Scene_t scene, Shape_t shape) {
 
 float scene_sdf_min(Scene_t scene, vec3 point) {
     float dist = INFINITY;
-    for (size_t i = 0; i < scene.object_count; i++)
-    {
+    for (size_t i = 0; i < scene.object_count; i++) {
         dist = fminf(dist, scene.shapes[i].sdf(point, scene.shapes[i].data));
     }
     return dist;

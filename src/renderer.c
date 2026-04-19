@@ -1,7 +1,7 @@
 #include "renderer.h"
-#include <string.h>
-#include <stdio.h>
 #include <assert.h>
+#include <stdio.h>
+#include <string.h>
 
 ScreenBuffer_t *screen_buffer_create(size_t width, size_t height) {
     ScreenBuffer_t *screen = malloc(sizeof(ScreenBuffer_t) + width * height * sizeof(char));
@@ -23,14 +23,13 @@ void screen_buffer_render(const ScreenBuffer_t *screen) {
     char text[size];
     size_t text_offset = 0;
     size_t buffer_offset = 0;
-    for (size_t y = 0; y < screen->height; y++)
-    {
+    for (size_t y = 0; y < screen->height; y++) {
         memcpy(&text[text_offset], &screen->buffer[buffer_offset], screen->width);
         text_offset += screen->width;
         buffer_offset += screen->width;
         text[text_offset++] = '\n';
     }
-    fwrite(text, 1, size , stdout);
+    fwrite(text, 1, size, stdout);
 
     // printf("raw buffer:%s", screen->buffer);
 }

@@ -9,7 +9,6 @@ typedef struct {
     char buffer[];
 } ScreenBuffer_t;
 
-
 ScreenBuffer_t *screen_buffer_create(size_t width, size_t height);
 
 void screen_buffer_free(ScreenBuffer_t *screen);
@@ -18,8 +17,6 @@ void screen_buffer_render(const ScreenBuffer_t *screen);
 
 void screen_buffer_clear(ScreenBuffer_t *screen);
 
-void screen_buffer_set_pixel(ScreenBuffer_t *screen ,size_t x, size_t y, char c);
-
-
+void screen_buffer_set_pixel(ScreenBuffer_t *screen, size_t x, size_t y, char c);
 
 #endif // RENDERER_H

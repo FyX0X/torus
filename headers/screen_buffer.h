@@ -13,7 +13,7 @@ ScreenBuffer_t *screen_buffer_create(size_t width, size_t height);
 
 void screen_buffer_free(ScreenBuffer_t *screen);
 
-void screen_buffer_render(const ScreenBuffer_t *screen);
+void screen_buffer_show(const ScreenBuffer_t *screen);
 
 void screen_buffer_clear(ScreenBuffer_t *screen);
 

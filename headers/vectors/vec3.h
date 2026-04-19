@@ -46,7 +46,7 @@ static inline float vec3_dot(vec3 u, vec3 v) {
 }
 
 static inline vec3 vec3_normalize(vec3 u) {
-    return vec3_scale(u, vec3_length(u));
+    return vec3_scale(u, 1.f / vec3_length(u));
 }
 
 #endif // VEC3_H

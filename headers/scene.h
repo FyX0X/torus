@@ -20,7 +20,7 @@ typedef struct {
 
 Scene_t scene_create();
 
-int scene_add_object(Scene_t scene, Shape_t shape);
+int scene_add_object(Scene_t *scene, Shape_t shape);
 
 float scene_sdf_min(Scene_t scene, vec3 point);
 
@@ -33,7 +33,7 @@ typedef struct {
     float radius;
 } Sphere_t;
 
-float sphere_sdf(vec3 p, void *data) {
+static float sphere_sdf(vec3 p, void *data) {
     Sphere_t *s = data;
     vec3 d = vec3_sub(p, s->center);
     return vec3_length(d) - s->radius;

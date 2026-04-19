@@ -1,5 +1,5 @@
 #include "scene.h"
-
+#include <stdio.h>
 #define DEFAULT_ARRAY_CAPACITY 4
 
 Scene_t scene_create() {
@@ -10,21 +10,21 @@ Scene_t scene_create() {
     };
 }
 
-int scene_add_object(Scene_t scene, Shape_t shape) {
+int scene_add_object(Scene_t *scene, Shape_t shape) {
     // realloc if needed.
-    if (scene.object_count == scene.capacity) {
-        Shape_t *temp = realloc(scene.shapes, scene.capacity ? scene.capacity * 2 : DEFAULT_ARRAY_CAPACITY * sizeof(Shape_t));
+    if (scene->object_count == scene->capacity) {
+        Shape_t *temp = realloc(scene->shapes, scene->capacity ? scene->capacity * 2 : DEFAULT_ARRAY_CAPACITY * sizeof(Shape_t));
         if (!temp) {
-            free(scene.shapes);
-            scene.capacity = 0;
-            scene.object_count = 0;
-            scene.shapes = NULL;
+            free(scene->shapes);
+            scene->capacity = 0;
+            scene->object_count = 0;
+            scene->shapes = NULL;
             return -1;
         }
-        scene.shapes = temp;
+        scene->shapes = temp;
     }
 
-    scene.shapes[scene.object_count++] = shape;
+    scene->shapes[scene->object_count++] = shape;
     return 0;
 }
 

@@ -16,7 +16,7 @@ void screen_buffer_free(ScreenBuffer_t *screen) {
     free(screen);
 }
 
-void screen_buffer_render(const ScreenBuffer_t *screen) {
+void screen_buffer_show(const ScreenBuffer_t *screen) {
     assert(screen);
     puts("\n>> Screen:\n");
     size_t size = (screen->width + 1) * screen->height * sizeof(char);

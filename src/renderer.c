@@ -1,4 +1,4 @@
-#include "renderer.h"
+#include "screen_buffer.h"
 #include <assert.h>
 #include <stdio.h>
 #include <string.h>

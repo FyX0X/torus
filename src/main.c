@@ -1,5 +1,5 @@
 #include "camera.h"
-#include "renderer.h"
+#include "screen_buffer.h"
 #include "scene.h"
 #include <stdbool.h>
 #include <stdio.h>
